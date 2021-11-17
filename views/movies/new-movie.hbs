@@ -10,8 +10,17 @@
   <label>Plot:</label>
   <input type="text" name="plot" />
 
-  <label>Cast:</label>
-  <input type="text" name="plot" />
+
+  <label for="cast">Cast:</label>
+  <select name="cast" id="cast" multiple>
+    {{#each}}
+    <option value="{{this._id}}">first</option>
+    {{/each}}
+    <option value="fiction">Fiction</option>
+    <option value="fantasy">Fantasy</option>
+    <option value="romance">Romance</option>
+    <option value="satire">Satire</option>
+  </select>
 
   <button type="submit">Create a new Movie!</button>
 </form>
