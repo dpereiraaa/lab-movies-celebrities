@@ -3,6 +3,19 @@ const Celebrity = require("../models/celebrity.model");
 const Movie = require("./../models/Movie.model");
 
 
+router.get("/movies", (req, res) => { //ROUTE -> this is the url
+  Movie.find()
+  .then((moviesFound) => {
+      res.render('movies/movies', {moviesFound: moviesFound})
+      console.log('moviesFound :>> ', moviesFound);
+  })
+  .catch((err) => {
+      console.log(err)
+  });
+
+});
+
+
 //PAGE TO CREATE A NEW MOVIE
 router.get("/movies/create", (req, res) => {
   Celebrity.find()
